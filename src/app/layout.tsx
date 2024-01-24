@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 // import Navbar from '@/components/Navbar'
 import LenisProvider from '@/components/LenisProvider'
+import Footer from '@/components/Footer'
 
 const poppins = Poppins({ weight: ["200", '300', '400', '500', '600', '700', '800', '900'], subsets: ["latin-ext"] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <LenisProvider>
           {children}
+          <Footer/>
         </LenisProvider>
       </body>
     </html>
