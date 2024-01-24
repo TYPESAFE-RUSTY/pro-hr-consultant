@@ -1,0 +1,157 @@
+:root {
+  --text: #1d1d1d;
+  --background: #f1f3f5;
+  --primary: rgba(0, 0, 0, 0.05);
+  --accent: #c9f31d;
+  --border: rgba(0, 0, 0, 0.1);
+  --padding-section: 8rem;
+  /* typography */
+
+  /*extra large font size*/
+  --fs-xl: clamp(1rem, 5vw + 1rem, 5rem);
+  /*medium font size*/
+  --fs-600: clamp(0.80rem, 2vw + 1rem, 3rem);
+  /*base font size*/
+  --fs-400: clamp(0.60rem, 3vw + 1rem, 3rem);
+  /* small font size */
+  --fs-200: clamp(0.40rem, 0.5vw + 1rem, 2rem);
+  /* xs font size */
+  --fs-xs: clamp(0.9rem, 0.01vw + 1rem, 1rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #fff;
+    --background: #1d1d1d;
+    --primary: rgba(255, 255, 255, 0.05);
+    --accent: #c9f31d;
+    --border: rgba(255, 255, 255, 0.1)
+  }
+}
+
+.container {
+  --padding-inline: 1rem;
+  --content-max-width: 135ch;
+  --breakout-max-width: 145ch;
+  /*actual width of breakout content*/
+
+  --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr) [breakout-start] minmax(0, var(--breakout-size)) [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] minmax(0, var(--breakout-size)) [breakout-end] minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+
+
+
+/* position utilities */
+.container>* {
+  grid-column: content;
+}
+
+.container>.breakout {
+  grid-column: breakout;
+}
+
+.container>.full-width {
+  grid-column: full-width;
+}
+
+/* typography utilities */
+.fs-xl {
+  font-size: var(--fs-xl);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-xs {
+  font-size: var(--fs-xs);
+}
+
+span.outline {
+  color: transparent;
+  font-weight: 900;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: var(--text);
+}
+
+/* Color utilities */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+}
+
+.bgcolor {
+  background-color: var(--background);
+}
+
+.bgaccent {
+  background-color: var(--accent);
+}
+
+.color {
+  color: var(--text);
+}
+
+.coloraccent {
+  color: var(--accent);
+}
+
+.border {
+  border-color: var(--border);
+}
+
+
+/* flex utilities */
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.place-center {
+  place-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+/* dimension utilities */
+.full-height {
+  height: max(40rem, 100vh);
+}
+
+.section-padding {
+  padding-block: var(--padding-section);
+}
+
+.section-padding-top {
+  padding-block-start: var(--padding-section);
+}
+
+/* scrollbar  */
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 100vh;
+}
