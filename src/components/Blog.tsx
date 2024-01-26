@@ -90,7 +90,7 @@ function BlogTemplate({ blog }: { blog: blogtype }) {
 
 export default function Blog() {
     return (
-        <section className="container section-padding" id="Blog">
+        <section className="container bgcolor section-padding" id="Blog">
             <div className="flex wrap" style={{ marginBlockEnd: "4rem" }}>
                 <div >
                     <h2 className="fs-200">FEATURED STORIES</h2>
