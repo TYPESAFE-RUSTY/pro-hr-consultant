@@ -1,5 +1,7 @@
 import "@/styles/r_blog.css"
 
+import Image from "next/image"
+
 
 enum tags {
     DESIGN,
@@ -59,9 +61,9 @@ let blog: Array<blogtype> = [
 
 function BlogTemplate({ blog }: { blog: blogtype }) {
     return (
-        <div className="blogDetails flex wrap" style={{ gap: "2rem" }}>
+        <div className="blogDetails flex wrap" style={{ gap: "2rem", backgroundImage: `url(${blog.backgroundImage})`, backgroundSize: '0 0', position: "relative" }}>
             <div className="author flex wrap" style={{ gap: "0.5rem", paddingBlockStart: "1rem" }}>
-                <div className="img" data-image-url={blog.data.profile}></div>
+                <Image className="img" src={blog.data.profile} alt="Profile Picture" width={60} height={60}></Image>
                 <div>
                     <p className="fs-xs">Posted by</p>
                     <h4 className="fs-200">
@@ -71,7 +73,7 @@ function BlogTemplate({ blog }: { blog: blogtype }) {
             </div>
             <div className="info" style={{ paddingBlockEnd: "1rem" }}>
                 <h4 className="fs-200">
-                    {blog.data.title}
+                    <a href={blog.data.url} className="color">{blog.data.title}</a>
                 </h4>
                 <div className="tags flex wrap" style={{ gap: "0.5rem" }}>
                     {
@@ -84,19 +86,22 @@ function BlogTemplate({ blog }: { blog: blogtype }) {
             <div className="date" style={{ paddingBlockEnd: "1rem" }}>
                 {`${blog.data.date.getDate()} ${blog.data.date.toLocaleString('en-US', { month: 'long' }).toUpperCase()} ${blog.data.date.getFullYear()}`}
             </div>
+            <div style={{ position: "absolute", top: "50%", left: "calc(50vw - 9ch)" }}>
+                <a href={blog.data.url} className="color">Read More</a>
+            </div>
         </div>
     )
 }
 
 export default function Blog() {
     return (
-        <section className="container section-padding" id="Blog">
+        <section className="container bgcolor section-padding" id="Blog">
             <div className="flex wrap" style={{ marginBlockEnd: "4rem" }}>
                 <div >
                     <h2 className="fs-200">FEATURED STORIES</h2>
                     <h3 className="fs-600">Latest News</h3>
                 </div>
-                <a className="color" href="">
+                <a className="fancy color" href="">
                     View All Our News
                 </a>
             </div>

@@ -29,19 +29,19 @@
     align-items: center;
 }
 
-#Blog a.color {
+#Blog a.fancy {
     text-decoration: none;
     text-underline-offset: 0.3rem;
     position: relative;
     z-index: 1;
 }
 
-#Blog a.color:hover,
-#Blog a.color:focus {
+#Blog a.fancy:hover,
+#Blog a.fancy:focus {
     text-decoration: underline;
 }
 
-#Blog a.color::after {
+#Blog a.fancy::after {
     content: "";
     display: block;
     position: absolute;
@@ -61,27 +61,7 @@
 #Blog>.blogDetails {
     border-top: 1px solid var(--border-color);
     background-color: rgba(0, 0, 0, 0);
-}
-
-#Blog>.blogDetails:hover {
-    color: transparent;
-    animation: bg 10s linear;
-    animation-fill-mode: forwards;
-}
-
-@keyframes bg {
-    0% {
-        background-position: top;
-    }
-
-    100% {
-        background-position: bottom;
-    }
-}
-
-
-#Blog>.blogDetails:hover .img {
-    background: transparent;
+    padding-inline: 1rem;
 }
 
 #Blog>.blogDetails .author p {
@@ -102,9 +82,8 @@
 #Blog>.blogDetails .img {
     height: 60px;
     aspect-ratio: 1/1;
+    width: auto;
     border-radius: 50%;
-    background-color: white;
-    background-image: attr(data-image-url url);
 }
 
 #Blog>.blogDetails .tags>* {
@@ -113,6 +92,58 @@
     border-radius: 100vh;
 }
 
-#Blog>.blogDetails:hover .tags>* {
-    border: transparent;
+
+#Blog>.blogDetails div>a {
+    color: transparent;
+    background-color: transparent;
+    text-decoration: none;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    border-radius: 100vh;
+}
+
+#Blog>.blogDetails div>a:hover,
+#Blog>.blogDetails div>a:focus {
+    text-decoration: underline;
+}
+
+/* animation */
+@media screen and (min-width:768px) {
+    #Blog>.blogDetails:hover {
+        color: transparent;
+        animation: bg 10s linear;
+        animation-fill-mode: forwards;
+    }
+
+    /* animation helpers */
+
+    #Blog>.blogDetails:hover .img {
+        background: transparent;
+    }
+
+    #Blog>.blogDetails:hover .tags>* {
+        border: transparent;
+    }
+
+    #Blog>.blogDetails:hover a {
+        color: transparent;
+    }
+
+    #Blog>.blogDetails:hover div>a {
+        color: black;
+        background-color: #c9f31d;
+    }
+
+}
+
+@keyframes bg {
+    0% {
+        background-position: top center;
+        background-size: auto auto;
+    }
+
+    100% {
+        background-position: bottom center;
+        background-size: auto auto;
+    }
 }
