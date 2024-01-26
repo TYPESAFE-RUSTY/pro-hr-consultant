@@ -11,6 +11,9 @@
     color: black;
     padding-block: 4rem;
     scale: 1.25;
+    padding-block-start: 6rem;
+    padding-inline-start: 2rem;
+    padding-block-end: 0;
 }
 
 #About h2 {
