@@ -1,13 +1,13 @@
 @media screen and (min-width:768px) {
     #Footer {
-        transform: translateY(-50%);
-        animation: footer ease-in-out;
+        transform: translateY(-80%);
+        animation: footer linear;
         animation-timeline: view();
     }
 
     @keyframes footer {
         to {
-            transform: translateY(100%);
+            transform: translateY(130%);
         }
     }
 }

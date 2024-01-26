@@ -155,3 +155,13 @@ body {
   background-color: #888;
   border-radius: 100vh;
 }
+
+/* makes sure footer remains at the bottom in z index */
+body>* {
+  position: relative;
+  z-index: 2;
+}
+
+footer {
+  z-index: 1;
+}
