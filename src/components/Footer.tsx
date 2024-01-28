@@ -29,7 +29,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="brand full-width container" style={{ paddingBlockStart: '2rem' }}>
-                <div className="flex align-center">
+                <div className="flex align-center" style={{ gap: "2rem" }}>
                     <a href="" className='color fs-200' style={{ fontWeight: '700' }}>GeekFolio</a>
                     <p className='fs-xs'>© 2023 Geekfolio is Proudly Powered by Ui-ThemeZ</p>
                 </div>

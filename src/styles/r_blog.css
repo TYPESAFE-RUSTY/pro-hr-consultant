@@ -100,6 +100,7 @@
     padding-inline: 2rem;
     padding-block: 1rem;
     border-radius: 100vh;
+    display: none;
 }
 
 #Blog>.blogDetails div>a:hover,
@@ -130,6 +131,7 @@
     }
 
     #Blog>.blogDetails:hover div>a {
+        display: block;
         color: black;
         background-color: #c9f31d;
     }

@@ -61,7 +61,7 @@ let blog: Array<blogtype> = [
 
 function BlogTemplate({ blog }: { blog: blogtype }) {
     return (
-        <div className="blogDetails flex wrap" style={{ gap: "2rem", backgroundImage: `url(${blog.backgroundImage})`, backgroundSize: '0 0', position: "relative" }}>
+        <div className="blogDetails flex wrap" style={{ gap: "2rem", backgroundImage: `url(${blog.backgroundImage})`, backgroundSize: '0 0', position: "relative", marginBlockEnd: "1px" }}>
             <div className="author flex wrap" style={{ gap: "0.5rem", paddingBlockStart: "1rem" }}>
                 <Image className="img" src={blog.data.profile} alt="Profile Picture" width={60} height={60}></Image>
                 <div>
@@ -95,7 +95,7 @@ function BlogTemplate({ blog }: { blog: blogtype }) {
 
 export default function Blog() {
     return (
-        <section className="container bgcolor section-padding" id="Blog">
+        <section className="container bgdiff section-padding" id="Blog">
             <div className="flex wrap" style={{ marginBlockEnd: "4rem" }}>
                 <div >
                     <h2 className="fs-200">FEATURED STORIES</h2>

@@ -1,10 +1,11 @@
 :root {
   --text: #1d1d1d;
   --background: #f1f3f5;
+  --background-diff: #fff;
   --primary: rgba(0, 0, 0, 0.05);
   --accent: #c9f31d;
   --border: rgba(0, 0, 0, 0.1);
-  --padding-section: 8rem;
+  --padding-section: 4rem;
   /* typography */
 
   /*extra large font size*/
@@ -23,6 +24,7 @@
   :root {
     --text: #fff;
     --background: #1d1d1d;
+    --background-diff: #1a1a1a;
     --primary: rgba(255, 255, 255, 0.05);
     --accent: #c9f31d;
     --border: rgba(255, 255, 255, 0.1)
@@ -95,6 +97,10 @@ body {
 
 .bgcolor {
   background-color: var(--background);
+}
+
+.bgdiff {
+  background-color: var(--background-diff);
 }
 
 .bgaccent {
