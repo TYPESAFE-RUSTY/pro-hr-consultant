@@ -1,0 +1,66 @@
+.INPUT {
+    position: relative;
+}
+
+.INPUT>input {
+    border: 1px solid var(--border);
+    color: var(--color);
+    padding: 0.9rem;
+    border-radius: 5px;
+    transition: .5ms;
+}
+
+.INPUT>label {
+    position: absolute;
+    font-size: small;
+    top: 9px;
+    left: 10px;
+    opacity: 0.5;
+    padding-block: 0;
+    padding-inline: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all 200ms, border 500ms;
+}
+
+.INPUT>input:valid {
+    outline: 1px solid var(--border);
+}
+
+.INPUT>input:active,
+.INPUT>input:focus {
+    outline: 1px solid var(--accent);
+}
+
+
+.INPUT>input:valid~label,
+.INPUT>textarea:valid~label {
+    border-left-color: var(--border);
+    border-right-color: var(--border);
+    background-color: var(--background);
+    transform: translateY(-20px);
+    opacity: 1;
+}
+
+.INPUT>input:focus~label,
+.INPUT>input:active~label,
+.INPUT>textarea:focus~label,
+.INPUT>textarea:active~label {
+    color: var(--text);
+    background-color: var(--background);
+    border-left: 1px solid var(--accent);
+    border-right: 1px solid var(--accent);
+    transform: translateY(-20px);
+    opacity: 1;
+}
+
+.INPUT>textarea {
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    padding: 0.9rem;
+}
+
+.INPUT>textarea:active,
+.INPUT>textarea:focus {
+    outline: 1px solid var(--accent);
+}

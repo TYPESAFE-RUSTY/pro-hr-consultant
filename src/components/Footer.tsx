@@ -3,7 +3,7 @@ import '@/styles/footer.css'
 
 export default function Footer() {
     return (
-        <footer className="container section-padding-top" id="Footer">
+        <footer className="container bgdiff section-padding-top" id="Footer">
             <div className="flex wrap" style={{ gap: '2rem' }}>
                 <div className="address">
                     <h2>Address</h2>
@@ -24,7 +24,7 @@ export default function Footer() {
                 <div className="newsletter">
                     <h2>NewsLetter</h2>
                     <div className='input'>
-                        <input type="email" placeholder='Type Your Email' className='bgcolor color' />
+                        <input type="email" placeholder='Type Your Email' className='bgdiff color' />
                     </div>
                 </div>
             </div>

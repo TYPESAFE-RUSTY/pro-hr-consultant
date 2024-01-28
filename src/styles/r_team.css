@@ -20,7 +20,7 @@
 #Team .join-us {
     width: 300px;
     height: 400px;
-    border: 1px solid;
+    border: 1px solid var(--border);
 }
 
 #Team .join-us a {

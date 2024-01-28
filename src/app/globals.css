@@ -13,7 +13,7 @@
   /*medium font size*/
   --fs-600: clamp(0.80rem, 2vw + 1rem, 3rem);
   /*base font size*/
-  --fs-400: clamp(0.60rem, 3vw + 1rem, 3rem);
+  --fs-400: clamp(0.60rem, 1vw + 1rem, 2.5rem);
   /* small font size */
   --fs-200: clamp(0.40rem, 0.5vw + 1rem, 2rem);
   /* xs font size */

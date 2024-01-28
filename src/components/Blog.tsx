@@ -61,7 +61,16 @@ let blog: Array<blogtype> = [
 
 function BlogTemplate({ blog }: { blog: blogtype }) {
     return (
-        <div className="blogDetails flex wrap" style={{ gap: "2rem", backgroundImage: `url(${blog.backgroundImage})`, backgroundSize: '0 0', position: "relative", marginBlockEnd: "1px" }}>
+        <div
+            className="blogDetails flex wrap"
+            style={{
+                gap: "2rem",
+                backgroundImage: `url(${blog.backgroundImage})`,
+                backgroundSize: '0 0',
+                position: "relative",
+                marginBlockEnd: "1px"
+            }}
+        >
             <div className="author flex wrap" style={{ gap: "0.5rem", paddingBlockStart: "1rem" }}>
                 <Image className="img" src={blog.data.profile} alt="Profile Picture" width={60} height={60}></Image>
                 <div>

@@ -28,7 +28,7 @@ const Members: Array<team | undefined> = [
 
 function TeamDetails({ member }: { member: team | undefined }) {
     if (member === undefined) {
-        return <div className="join-us border flex align-center">
+        return <div className="join-us flex align-center">
             <div style={{ marginInline: "auto" }}>
                 <h4 className="fs-200">BECOME A MEMBER</h4>
                 <a href="" className="color">JOIN US</a>
