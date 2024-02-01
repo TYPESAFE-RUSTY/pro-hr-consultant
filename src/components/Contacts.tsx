@@ -4,7 +4,7 @@ import Form from './Form'
 export default function Contacts() {
     return (
         <section id="Contacts" className="container bgcolor section-padding">
-            <div className="flex wrap" style={{ placeContent: "space-evenly" }}>
+            <div className="flex wrap" style={{ placeContent: "space-between" }}>
                 <div className='content'>
                     <h2 className='fs-200'>GET IN TOUCH</h2>
                     <h3 className='fs-600'>Let&apos;s make your brand brilliant!</h3>

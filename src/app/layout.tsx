@@ -4,6 +4,8 @@ import './globals.css'
 // import Navbar from '@/components/Navbar'
 import LenisProvider from '@/components/LenisProvider'
 import Footer from '@/components/Footer'
+import dynamic from 'next/dynamic'
+const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false })
 
 const poppins = Poppins({ weight: ["200", '300', '400', '500', '600', '700', '800', '900'], subsets: ["latin-ext"] })
 
@@ -21,8 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <LenisProvider>
+          <Navbar />
           {children}
-          <Footer/>
+          <Footer />
         </LenisProvider>
       </body>
     </html>

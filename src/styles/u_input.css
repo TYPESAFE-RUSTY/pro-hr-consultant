@@ -12,6 +12,7 @@
 
 .INPUT>label {
     position: absolute;
+    pointer-events: none;
     font-size: small;
     top: 9px;
     left: 10px;
