@@ -72,7 +72,7 @@ function BlogTemplate({ blog }: { blog: blogtype }) {
             }}
         >
             <div className="author flex wrap" style={{ gap: "0.5rem", paddingBlockStart: "1rem" }}>
-                <Image className="img" src={blog.data.profile} alt="Profile Picture" width={60} height={60}></Image>
+                <Image className="img" src={blog.data.profile} alt="Profile Picture" width={60} height={60} style={{ objectFit: "contain", objectPosition: "center" }}></Image>
                 <div>
                     <p className="fs-xs">Posted by</p>
                     <h4 className="fs-200">
