@@ -8,7 +8,7 @@ function Radio({ text }: { text: string }) {
     const router = useRouter()
 
     return (
-        <label>
+        <label tabIndex={0}>
             <input type="checkbox" className="slider" />
             <div className="switch" >
                 <div className="text" style={{ display: 'flex' }}>

@@ -25,8 +25,6 @@ export default function Navbar() {
 
     const [nav, setnav] = useState<menu>(menu.closed)
 
-    console.log(theme)
-
     useEffect(() => {
         if (theme === Theme.dark) {
             document.body.classList.remove("light");

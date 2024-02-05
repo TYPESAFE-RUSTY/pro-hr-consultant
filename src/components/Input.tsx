@@ -18,7 +18,7 @@ export default function Input({ name, label, className, style, value, onChange, 
     return (
         <>
             <div
-                className={`INPUT ${className}`}
+                className={`INPUT ${className ? className : ''}`}
                 style={style}
             >
                 {
@@ -28,7 +28,6 @@ export default function Input({ name, label, className, style, value, onChange, 
                             name={name}
                             value={value}
                             onChange={(e) => onChange(e)}
-                            className="bgcolor color"
                             rows={8}
                             required={required}></textarea>
                         :
@@ -37,7 +36,6 @@ export default function Input({ name, label, className, style, value, onChange, 
                             name={name}
                             value={value}
                             onChange={(e) => onChange(e)}
-                            className="bgcolor"
                             type={type}
                             required={required}
                         />
