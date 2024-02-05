@@ -1,10 +1,17 @@
 .INPUT {
     position: relative;
+    --input-color: var(--color);
+    --input-background: var(--background);
+    --input-border: var(--border);
+    --input-accent: var(--accent);
+    --input-color: var(--color)
 }
 
 .INPUT>input {
-    border: 1px solid var(--border);
-    color: var(--color);
+    background-color: var(--input-background);
+    color: var(--input-color);
+    border: 1px solid var(--input-border);
+    color: var(--input-color);
     padding: 0.9rem;
     border-radius: 5px;
     transition: .5ms;
@@ -25,20 +32,20 @@
 }
 
 .INPUT>input:valid {
-    outline: 1px solid var(--border);
+    outline: 1px solid var(--input-border);
 }
 
 .INPUT>input:active,
 .INPUT>input:focus {
-    outline: 1px solid var(--accent);
+    outline: 1px solid var(--input-accent);
 }
 
 
 .INPUT>input:valid~label,
 .INPUT>textarea:valid~label {
-    border-left-color: var(--border);
-    border-right-color: var(--border);
-    background-color: var(--background);
+    border-left-color: var(--input-border);
+    border-right-color: var(--input-border);
+    background-color: var(--input-background);
     transform: translateY(-20px);
     opacity: 1;
 }
@@ -48,20 +55,22 @@
 .INPUT>textarea:focus~label,
 .INPUT>textarea:active~label {
     color: var(--text);
-    background-color: var(--background);
-    border-left: 1px solid var(--accent);
-    border-right: 1px solid var(--accent);
+    background-color: var(--input-background);
+    border-left: 1px solid var(--input-accent);
+    border-right: 1px solid var(--input-accent);
     transform: translateY(-20px);
     opacity: 1;
 }
 
 .INPUT>textarea {
     border-radius: 5px;
-    border: 1px solid var(--border);
+    background-color: var(--input-background);
+    color: var(--input-color);
+    border: 1px solid var(--input-border);
     padding: 0.9rem;
 }
 
 .INPUT>textarea:active,
 .INPUT>textarea:focus {
-    outline: 1px solid var(--accent);
+    outline: 1px solid var(--input-accent);
 }

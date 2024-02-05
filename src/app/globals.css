@@ -7,6 +7,8 @@
   --border: rgba(0, 0, 0, 0.1);
   --padding-section: 4rem;
   --logo: url("/images/logo-dark.png");
+  --shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
+
   scroll-padding-top: 4rem;
   /* typography */
 
@@ -31,6 +33,7 @@
     --accent: #c9f31d;
     --border: rgba(255, 255, 255, 0.1);
     --logo: url("/images/logo-light.png");
+    --shadow: rgba(255, 255, 255, 0.05) 0px 2px 8px;
   }
 }
 
@@ -43,6 +46,7 @@ body.light {
   --border: rgba(0, 0, 0, 0.1);
   --padding-section: 4rem;
   --logo: url("/images/logo-dark.png");
+  --shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px;
 }
 
 body.dark {
@@ -53,6 +57,7 @@ body.dark {
   --accent: #c9f31d;
   --border: rgba(255, 255, 255, 0.1);
   --logo: url("/images/logo-light.png");
+  --shadow: rgba(255, 255, 255, 0.05) 0px 2px 8px;
 }
 
 
@@ -215,4 +220,13 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
+}
+
+/* extra */
+.glass {
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
