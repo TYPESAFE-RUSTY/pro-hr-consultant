@@ -1,0 +1,84 @@
+#Profile {
+    background-color: var(--background);
+}
+
+#Profile .info>* {
+    margin-block-end: 1rem;
+}
+
+#Profile .info {
+    padding: 1rem;
+}
+
+#Profile>div {
+    position: relative;
+    z-index: 4;
+    padding: 1rem;
+}
+
+#Profile .address>input {
+    width: calc(100% - 2rem);
+}
+
+#Profile select {
+    background-color: var(--background);
+    color: var(--text);
+    border: none;
+    outline: 1px solid var(--border);
+    padding: .9rem;
+    border-radius: 5px;
+    margin-block-end: 1rem;
+}
+
+
+#Profile select:focus,
+#Profile select:active {
+    outline: 1px solid var(--accent);
+}
+
+#Profile .card {
+    padding: 2rem;
+}
+
+#Profile .card .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#Profile .card img {
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+#Profile .card svg {
+    display: none;
+}
+
+@media screen and (min-width :800px) {
+    #Profile .card svg {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        filter: blur(10ch);
+        opacity: .5;
+        background-color: var(--accent);
+    }
+}
+
+#Profile .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+}
+
+#Profile .accordion-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+}
+
+#Profile .accordion-content>div {
+    overflow: clip;
+}
