@@ -1,0 +1,16 @@
+#Questionnaire>div {
+    padding: 1.5rem;
+}
+
+#Questionnaire>div button {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    border: none;
+    color: var(--text);
+    background-color: inherit;
+}
+
+#Questionnaire h3 {
+    margin: 0;
+}

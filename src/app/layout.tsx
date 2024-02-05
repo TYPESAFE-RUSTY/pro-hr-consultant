@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
 // import Navbar from '@/components/Navbar'
-import LenisProvider from '@/components/LenisProvider'
+import LenisProvider from '@/wrappers/LenisProvider'
 import Footer from '@/components/Footer'
 import dynamic from 'next/dynamic'
 const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false })
