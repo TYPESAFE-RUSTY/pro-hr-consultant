@@ -12,9 +12,12 @@ interface input {
     value: string,
     onChange: Function,
     required: boolean
+
+    rows?: number,
+    cols?: number
 }
 
-export default function Input({ name, label, className, style, value, onChange, required, type }: input) {
+export default function Input({ name, label, className, style, value, onChange, required, type, rows, cols }: input) {
     return (
         <>
             <div
@@ -28,7 +31,8 @@ export default function Input({ name, label, className, style, value, onChange, 
                             name={name}
                             value={value}
                             onChange={(e) => onChange(e)}
-                            rows={8}
+                            rows={rows ? rows : 8}
+                            cols={cols}
                             required={required}></textarea>
                         :
                         <input

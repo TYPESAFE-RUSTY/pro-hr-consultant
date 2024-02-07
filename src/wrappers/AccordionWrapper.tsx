@@ -10,11 +10,11 @@ export default function AccordionWrapper(
     return (
         <div className="accordion-panel">
             <h3>
-                <button className="accordion-trigger" aria-expanded={active} onClick={() => { setActive(!active) }} aria-controls={id} >
+                <button className="accordion-trigger" data-expanded={active} onClick={() => { setActive(!active) }} data-controls={id} >
                     {heading}
                 </button>
             </h3>
-            <div className="accordion-content" aria-hidden={!active} id={id}>
+            <div className="accordion-content" data-hidden={!active} id={id}>
                 <div>
                     {children}
                 </div>
