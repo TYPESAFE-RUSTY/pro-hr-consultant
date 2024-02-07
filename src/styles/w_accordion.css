@@ -4,7 +4,7 @@
     transition: grid-template-rows 500ms;
 }
 
-.accordion-content[aria-hidden="false"] {
+.accordion-content[data-hidden="false"] {
     grid-template-rows: 1fr;
 }
 
