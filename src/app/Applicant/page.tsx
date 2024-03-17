@@ -6,6 +6,11 @@ export default function page() {
         <>
             <Profile />
             <AQuestionnaire />
+            <div className="container bgcolor" style={{ padding: "2rem" }}>
+                <div className="flex align-center" style={{ justifyContent: "center" }}>
+                    <a href="./Applicant/Resume"><button className="button">GENERATE RESUME</button></a>
+                </div>
+            </div>
         </>
     )
 }

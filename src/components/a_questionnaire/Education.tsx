@@ -35,7 +35,7 @@ const Card = ({ data, index, deleteCard }: { data: education, index: number, del
 
 export default function Education() {
 
-    const [Educations, setExperiences] = useLocalStorage<education[]>('Education', templateArray)
+    const [Educations, setExperiences] = useLocalStorage<education[]>('Educations', templateArray)
     const [Education, setExperience] = useState<education>(template)
 
     useEffect(() => {

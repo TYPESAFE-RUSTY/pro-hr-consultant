@@ -17,10 +17,11 @@
     background-color: inherit;
     font-weight: 700;
     font-size: var(--fs-xs);
-    transition: all 200ms;
+    /* transition: all 200ms; */
 }
 
-#Questionnaire>div form>button {
+#Questionnaire>div form>button,
+a>button {
     height: 100%;
     border-radius: 5px;
     border: 1px solid var(--border);
@@ -33,7 +34,9 @@
 }
 
 #Questionnaire>div button:active,
-#Questionnaire>div button:hover {
+#Questionnaire>div button:hover,
+a>button:active,
+a>button:hover {
     background-color: var(--text);
     color: var(--background);
 }
@@ -124,4 +127,6 @@
     max-width: 30ch;
     min-height: 5rem;
     padding: 1rem;
+    color: black;
+    background-color: var(--accent);
 }

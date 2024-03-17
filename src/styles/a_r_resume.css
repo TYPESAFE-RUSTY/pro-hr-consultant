@@ -1,0 +1,77 @@
+#Resume {
+    background-color: var(--background);
+}
+
+#Resume .grid {
+    display: grid;
+    padding: var(--padding-section);
+    grid-template-columns: 4fr 12fr;
+}
+
+#Resume .aside {
+    border-right: 1px solid var(--text);
+    padding-block: 2rem;
+    padding-inline: 0.25rem;
+}
+
+#Resume .aside>p {
+    margin-block: 1rem;
+}
+
+#Resume .aside a {
+    color: var(--text);
+}
+
+#Resume .main {
+    padding-inline-start: 1rem;
+}
+
+#Resume .main>*,
+#Resume .aside>* {
+    margin-block: 2rem;
+}
+
+#Resume .main h3,
+#Resume .aside h3 {
+    margin-block: 0.5rem;
+}
+
+#Resume .experience,
+#Resume .education {
+    margin-block: 1rem;
+}
+
+#Resume .experience>p,
+#Resume .education>p,
+#Resume .education>div>p,
+#Resume .experience>div>p,
+#Resume .main>div>p,
+#Resume .aside>div>p {
+    margin: 0;
+    padding: 0;
+}
+
+#Resume .experience>*:last-child,
+#Resume .education>*:last-child {
+    margin-block-start: 0.5rem;
+}
+
+#Resume button {
+    height: 100%;
+    border-radius: 100vh;
+    width: max-content;
+    margin-inline: auto;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 1rem;
+    background-color: inherit;
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    transition: all 0.5s;
+}
+
+#Resume button:active,
+#Resume button:hover {
+    background-color: var(--text);
+    color: var(--background);
+}
