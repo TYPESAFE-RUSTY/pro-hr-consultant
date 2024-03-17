@@ -7,6 +7,10 @@ header {
     border-bottom: 1px solid var(--border);
 }
 
+header.print {
+    display: none;
+}
+
 header>div>* {
     padding-block: 1rem;
 }

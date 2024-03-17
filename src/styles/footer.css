@@ -26,6 +26,10 @@
     }
 }
 
+#Footer.print {
+    display: none;
+}
+
 #Footer>div.flex.wrap {
     justify-content: space-between;
     margin-block-end: 4rem;

@@ -40,7 +40,13 @@ export interface education {
     description: string
 }
 
-
+export interface applicantData extends generalInfo {
+    summary: summary,
+    educations: education[],
+    experiences: experience[],
+    languages: string[]
+    skills: string[]
+}
 
 
 
@@ -91,3 +97,12 @@ export const skills: string[] = []
 export const Educations: education[] = []
 
 export const Experiences: experience[] = []
+
+export const ApplicantData: applicantData = {
+    ...GeneralInformation,
+    summary: Summary,
+    educations: Educations,
+    experiences: Experiences,
+    languages: Languages,
+    skills: skills
+}
