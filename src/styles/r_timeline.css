@@ -38,12 +38,4 @@
 #Timeline .timelineCar {
     position: relative;
     z-index: 3;
-    animation: car ease-in-out;
-    animation-timeline: view(block 50%);
-}
-
-@keyframes car {
-    to {
-        transform: translateY(250ch);
-    }
 }

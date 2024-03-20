@@ -3,11 +3,48 @@ import Image from 'next/image';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '@/styles/r_timeline.css'
+import { useEffect, useRef } from 'react';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
 
 
 function Timeline() {
+
+  const triggerRef = useRef<HTMLElement | null>(null);
+  const end = useRef<HTMLDivElement | null>(null);
+  const animatedRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    let value = triggerRef.current?.id
+    gsap.registerPlugin(ScrollTrigger);
+    let top: number = (end.current?.getBoundingClientRect().top || 0) - (triggerRef.current?.getBoundingClientRect().top || 0)
+
+    // Animate the scroll-triggered element
+    gsap.to(animatedRef.current, {
+      top: top || 0,
+      scrollTrigger: {
+        trigger: triggerRef.current,
+        start: 'top 10%',
+        end: 'bottom top',
+        toggleActions: 'play none none reverse',
+        scrub: true,
+        onToggle: (self) => {
+          const car = document.querySelector('.timelineCar') as HTMLElement;
+          if (self.direction === 1) {
+            car.style.transform = 'rotate(180deg)';
+          } else {
+            car.style.transform = 'rotate(0deg)';
+          }
+        },
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getById(value || '')?.kill();
+    };
+  }, []);
   return (
-    <section id='Timeline'>
+    <section id='Timeline' ref={triggerRef}>
       <VerticalTimeline className="curved-timeline"
       >
         <VerticalTimelineElement
@@ -16,7 +53,7 @@ function Timeline() {
           date="2010"
           iconStyle={{ background: '#c9f31d', color: '#ffff' }}
           icon={
-            <Image className='timelineCar' src='/images/Car.png' style={{ objectFit: "contain", objectPosition: "left", zIndex: 3 }} alt='timeline scroll position' width={100} height={100}></Image>
+            <Image ref={animatedRef} className='timelineCar' src='/images/Car.png' style={{ objectFit: "contain", objectPosition: "left", zIndex: 3 }} alt='timeline scroll position' width={100} height={100}></Image>
           }
 
         >
@@ -81,6 +118,9 @@ function Timeline() {
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
           date="2020-2023"
+          icon={
+            <div ref={end}></div>
+          }
           iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
         >
           <h3 className="vertical-timeline-element-title"> Thought Leadership and Industry Contributions</h3>
