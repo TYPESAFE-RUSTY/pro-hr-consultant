@@ -31,7 +31,7 @@ function Timeline() {
         onToggle: (self) => {
           const car = document.querySelector('.timelineCar') as HTMLElement;
           if (self.direction === 1) {
-            car.style.transform = 'rotate(180deg)';
+            car.style.transform = 'rotate(180deg) translateX(2.5rem)';
           } else {
             car.style.transform = 'rotate(0deg)';
           }

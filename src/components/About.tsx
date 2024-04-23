@@ -12,6 +12,7 @@ export default function About() {
                         <span>dedicated to optimizing your workforce.</span><br />
                     </h3>
                     <p className="fs-xs">We believe that if you follow your passion, you won&apos;t have to work a day in your life. Our expertise lies in helping you discover your passion.
+                        <br />
                         With over 20 years of industry experience, a group of dynamic individuals decided to share their expertise and assist people in finding companies that enable them to pursue their passions.
                         <br />
                         How do we help?

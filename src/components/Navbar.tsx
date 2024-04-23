@@ -41,7 +41,7 @@ export default function Navbar() {
             <div className="flex wrap" style={{ justifyContent: "space-between" }}>
                 <Link href="/" className="logo" aria-label="Home Page"></Link>
                 <nav className="flex navbar" style={{ gap: "1.5rem" }}>
-                    <ReactLink to="hero" href="#hero" smooth offset={-100}>HOME</ReactLink>
+                    <Link href="/">HOME</Link>
                     <ReactLink to="About" href="#About" smooth offset={-50}>ABOUT</ReactLink>
                     <ReactLink to="Timeline" href="#Timeline" smooth offset={-50}>TIMELINE</ReactLink>
                     <ReactLink to="Team" href="#Team" smooth offset={-50}>TEAM</ReactLink>
@@ -59,7 +59,7 @@ export default function Navbar() {
             </div>
             <div className="mobile-nav" style={{ display: nav ? "none" : "block" }} onClick={() => setnav(menu.closed)}>
                 <nav >
-                    <ReactLink to="hero" href="#hero" smooth offset={-100}>HOME</ReactLink>
+                    <Link href="/">HOME</Link>
                     <ReactLink to="About" href="#About" smooth offset={-50}>ABOUT</ReactLink>
                     <ReactLink to="Timeline" href="#Timeline" smooth offset={-50}>TIMELINE</ReactLink>
                     <ReactLink to="Team" href="#Team" smooth offset={-50}>TEAM</ReactLink>
