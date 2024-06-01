@@ -1,4 +1,5 @@
 import "@/styles/r_about.css"
+import HexagonDiagrma from "./HexagonDiagram"
 
 export default function About() {
     return (
@@ -31,28 +32,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <ul id="grid" className="hexcontainer clear fs-xs">
-                    <li >
-                        <div className="hexagon" style={{ visibility: "hidden" }}></div>
-                    </li>
-                    <li>
-                        <div className="hexagon" style={{ display: "flex", alignItems: "center", placeContent: "center" }}><div>Discovering Job</div></div>
-                    </li>
-                    <li>
-                        <div className="hexagon" style={{ visibility: "hidden" }}></div>
-                    </li>
-                    <li>
-                        <div className="hexagon" style={{ display: "flex", alignItems: "center", placeContent: "center" }}>
-                            <div>Preparation for the job
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className="hexagon" style={{ display: "flex", alignItems: "center", placeContent: "center" }}>
-                            <div>Shaping future growth</div>
-                        </div>
-                    </li>
-                </ul>
+                <HexagonDiagrma />
             </div>
         </section>
     )

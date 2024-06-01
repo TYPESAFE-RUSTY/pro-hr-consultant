@@ -43,9 +43,9 @@ export default function Navbar() {
                 <nav className="flex navbar" style={{ gap: "1.5rem" }}>
                     <Link href="/">HOME</Link>
                     <ReactLink to="About" href="#About" smooth offset={-50}>ABOUT</ReactLink>
-                    <ReactLink to="Timeline" href="#Timeline" smooth offset={-50}>TIMELINE</ReactLink>
-                    <ReactLink to="Team" href="#Team" smooth offset={-50}>TEAM</ReactLink>
-                    <ReactLink to="Blog" href="#Blog" smooth offset={-50}>BLOG</ReactLink>
+                    {/* <ReactLink to="Timeline" href="#Timeline" smooth offset={-50}>TIMELINE</ReactLink> */}
+                    {/* <ReactLink to="Team" href="#Team" smooth offset={-50}>TEAM</ReactLink> */}
+                    {/* <ReactLink to="Blog" href="#Blog" smooth offset={-50}>BLOG</ReactLink> */}
                     <ReactLink to="Contacts" href="#Contacts" smooth offset={-50}>CONTACT</ReactLink>
                 </nav>
                 <button className="mode"
@@ -61,9 +61,9 @@ export default function Navbar() {
                 <nav >
                     <Link href="/">HOME</Link>
                     <ReactLink to="About" href="#About" smooth offset={-50}>ABOUT</ReactLink>
-                    <ReactLink to="Timeline" href="#Timeline" smooth offset={-50}>TIMELINE</ReactLink>
-                    <ReactLink to="Team" href="#Team" smooth offset={-50}>TEAM</ReactLink>
-                    <ReactLink to="Blog" href="#Blog" smooth offset={-50}>BLOG</ReactLink>
+                    {/* <ReactLink to="Timeline" href="#Timeline" smooth offset={-50}>TIMELINE</ReactLink> */}
+                    {/* <ReactLink to="Team" href="#Team" smooth offset={-50}>TEAM</ReactLink> */}
+                    {/* <ReactLink to="Blog" href="#Blog" smooth offset={-50}>BLOG</ReactLink> */}
                     <ReactLink to="Contacts" href="#Contacts" smooth offset={-50}>CONTACT</ReactLink>
                     <div onClick={() => { setTheme(theme === Theme.dark ? Theme.light : Theme.dark) }}
                     >{theme === Theme.dark ? "DARK" : "LIGHT"}</div>
