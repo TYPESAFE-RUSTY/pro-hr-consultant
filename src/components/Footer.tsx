@@ -7,12 +7,12 @@ export default function Footer() {
             <div className="flex wrap" style={{ gap: '2rem' }}>
                 <div className="address">
                     <h2>Address</h2>
-                    <p>Germany — 785 15h Street, Office 478 Berlin, De 81566</p>
+                    <p>Flat No: I 302, Nakshtra Phase 1, CDC Purna Nagar, Chinchwad, Pune - 411019</p>
                 </div>
                 <div className="hello">
                     <h2>Say Hello</h2>
                     <a href="" className='color'>hello@design.com</a>
-                    <p className="number fs-200">+1 840 841 25 69</p>
+                    <p className="number fs-200">+91 840 841 2569</p>
                 </div>
                 <div className="socials">
                     <h2>Socials</h2>

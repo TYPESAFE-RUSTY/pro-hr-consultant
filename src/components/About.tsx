@@ -1,5 +1,5 @@
 import "@/styles/r_about.css"
-import HexagonDiagrma from "./HexagonDiagram"
+import HexagonDiagram from "./HexagonDiagram"
 
 export default function About() {
     return (
@@ -19,7 +19,7 @@ export default function About() {
                         How do we help?
                         <br />
                         We help you address every situation and prepare you to meet present and future challenges.</p>
-                    <div className="flex wrap  border info">
+                    {/* <div className="flex wrap  border info">
                         <div>
                             <span className="outline fs-600">12K</span>
                             <div>Happy Users around World</div>
@@ -30,9 +30,9 @@ export default function About() {
                             </div>
                             <div>Projects Already Done</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                <HexagonDiagrma />
+                <HexagonDiagram />
             </div>
         </section>
     )

@@ -9,7 +9,7 @@ export default function Contacts() {
                     <h2 className='fs-200'>GET IN TOUCH</h2>
                     <h3 className='fs-600'>Let&apos;s make your brand brilliant!</h3>
                     <p>If you would like to work with us or just want to get in touch, we&apos;d love to hear from you!</p>
-                    <p className='coloraccent fs-400'>+1 840 841 25 69 </p>
+                    <p className='coloraccent fs-400'>+91 840 841 2569 </p>
                     <div className="flex wrap">
                         <a href="" className='color'>Facebook</a>
                         <a href="" className='color'>Twitter</a>
