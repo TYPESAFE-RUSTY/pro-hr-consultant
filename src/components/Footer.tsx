@@ -12,7 +12,7 @@ export default function Footer() {
                 <div className="hello">
                     <h2>Say Hello</h2>
                     <a href="" className='color'>hello@design.com</a>
-                    <p className="number fs-200">+91 840 841 2569</p>
+                    <p className="number fs-200">+91 992 114 7068</p>
                 </div>
                 <div className="socials">
                     <h2>Socials</h2>

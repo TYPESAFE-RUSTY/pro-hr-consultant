@@ -1,5 +1,5 @@
 import "@/styles/r_about.css"
-import HexagonDiagram from "./HexagonDiagram"
+import HexagonDiagrma from "./HexagonDiagram"
 
 export default function About() {
     return (
@@ -32,7 +32,7 @@ export default function About() {
                         </div>
                     </div> */}
                 </div>
-                <HexagonDiagram />
+                <HexagonDiagrma />
             </div>
         </section>
     )
