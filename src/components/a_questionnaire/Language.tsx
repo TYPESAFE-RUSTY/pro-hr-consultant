@@ -3,7 +3,7 @@
 import React, { useState } from "react"
 import Input from "../Input"
 import useLocalStorage from "@/hooks/useLocalStorage";
-import { Languages as template } from "@/utils/dataStructure";
+import { Languages as template } from "@/utils/client/dataStructure";
 
 const description = 'Include a language proficiency section, specifying fluency and relevant certifications. Highlight languages relevant to the job and industry, emphasizing bilingual or multilingual abilities if applicable.'
 
@@ -11,7 +11,7 @@ const Card = ({ data, index, deleteCard }: { data: string, index: number, delete
     return (
         <div className='str-card'>
             <p style={{ color: "#1d1d1d" }}>{data}</p>
-            <button onClick={() => deleteCard(index)}>X</button>
+            <button onClick={() => deleteCard(index)} tabIndex={-1}>X</button>
         </div>
     )
 }
@@ -42,16 +42,7 @@ export default function Language() {
 
     return (
         <div style={{ padding: "1rem" }}>
-            <div className="flex wrap" style={{ gap: "0.5rem" }}>
-                {
-                    languages
-                        .map((element, index) => (
-                            <Card key={index} index={index} data={element} deleteCard={deleteCard} />
-                        ))
-                }
-            </div>
             <div className="summary flex wrap align-center" style={{ justifyContent: "space-between", gap: "1rem", marginBlockEnd: "1rem" }}>
-                <p className="description" style={{ maxWidth: "60ch" }}>{description}</p>
                 <form className='flex wrap align-center' style={{ maxWidth: "65ch", gap: "1rem" }} onSubmit={e => handleClick(e)}>
                     <Input
                         label='Language'
@@ -61,8 +52,17 @@ export default function Language() {
                         onChange={handleChange}
                         required
                     />
-                    <button onClick={e => handleClick(e)}>+</button>
+                    <button style={{ paddingBlock: "0.66rem" }} onClick={e => handleClick(e)}>+</button>
                 </form>
+                <p className="description" style={{ maxWidth: "60ch" }}>{description}</p>
+            </div>
+            <div className="flex wrap" style={{ gap: "0.5rem" }}>
+                {
+                    languages
+                        .map((element, index) => (
+                            <Card key={index} index={index} data={element} deleteCard={deleteCard} />
+                        ))
+                }
             </div>
         </div>
     )

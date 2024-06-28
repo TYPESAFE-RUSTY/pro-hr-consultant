@@ -1,0 +1,41 @@
+#auth-layout {
+    padding-block: 7rem;
+}
+
+#auth-layout>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#auth-layout>div>form {
+    border: 1px solid var(--border);
+    padding: 2rem 2rem;
+    border-radius: 5px;
+}
+
+#auth-layout form>* {
+    margin-block-start: 1rem;
+}
+
+#auth-layout button {
+    width: 100%;
+    padding-block: 0.5rem;
+    border-radius: 100vh;
+    border: 2px solid var(--border);
+    background-color: var(--background);
+    color: var(--text);
+    transition: all 200ms;
+}
+
+#auth-layout button:hover,
+#auth-layout button:active,
+#auth-layout button:focus {
+    background-color: var(--text);
+    color: var(--background);
+    outline: none;
+}
+
+.INPUT>input {
+    width: 90%;
+}

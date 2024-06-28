@@ -129,4 +129,11 @@ a>button:hover {
     padding: 1rem;
     color: black;
     background-color: var(--accent);
+    margin-block-end: 1rem;
+}
+
+#Questionnaire .card-container {
+    max-width: 50rem;
+    overflow-x: scroll;
+    scrollbar-width: 10px;
 }

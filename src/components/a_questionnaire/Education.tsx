@@ -1,8 +1,8 @@
 'use client';
-import { Education as template, Educations as templateArray, experience, education } from "@/utils/dataStructure";
+import { Education as template, Educations as templateArray, education } from "@/utils/client/dataStructure";
 import Input from "../Input"
 import useLocalStorage from "@/hooks/useLocalStorage";
-import { setPropByString } from "@/utils/utilityFunctions";
+import { setPropByString } from "@/utils/client/utilityFunctions";
 import { useEffect, useState } from "react";
 
 const description = 'Incorporate your education information by including essential details such as your highest level of education, university/college name, major, graduation year, and relevant certifications. Highlight academic achievements and emphasize your qualifications, especially if you have limited work experience.'
@@ -10,25 +10,23 @@ const description = 'Incorporate your education information by including essenti
 
 const Card = ({ data, index, deleteCard }: { data: education, index: number, deleteCard: Function }) => {
     return (
-        <div className="obj-card flex glass" style={{ gap: '1rem' }}>
-            <div>
-                <b>
-                    Year :
-                </b> {data.year.start} - {data.year.end ? data.year.end : "Current"}<br />
-                <b>
-                    Location :
-                </b> {data.location}<br />
-                <b>
-                    Degree :
-                </b> {data.degree}<br />
-                <b>
-                    University :
-                </b> {data.university}<br />
-                <b>
-                    Description :
-                </b> {data.description.slice(0, 20)}{data.description.length > 20 && "..."}
-            </div>
-            <button onClick={() => deleteCard(index)}>X</button>
+        <div className="obj-card " style={{ gap: '1rem', minWidth: "17rem", position: "relative" }}>
+            <b>
+                Year :
+            </b> {data.year.start} - {data.year.end ? data.year.end : "Current"}<br />
+            <b>
+                Location :
+            </b> {data.location}<br />
+            <b>
+                Degree :
+            </b> {data.degree}<br />
+            <b>
+                University :
+            </b> {data.university}<br />
+            <b>
+                Description :
+            </b> {data.description.slice(0, 20)}{data.description.length > 20 && "..."}
+            <button style={{ position: "absolute", right: "10px", top: "10px" }} onClick={() => deleteCard(index)} tabIndex={-1}>X</button>
         </div>
     )
 }
@@ -78,16 +76,8 @@ export default function Education() {
 
     return (
         <div style={{ padding: "1rem" }}>
-            <div className="flex wrap" style={{ gap: "0.5rem" }}>
-                {
-                    Educations
-                        .map((element, index) => (
-                            <Card key={index} index={index} data={element} deleteCard={deleteCard} />
-                        ))
-                }
-            </div>
+
             <div className="summary flex wrap align-center" style={{ justifyContent: "space-between", gap: "1rem", marginBlockEnd: "1rem" }}>
-                <p className="description" style={{ maxWidth: "60ch" }}>{description}</p>
                 <form className='flex wrap align-center' style={{ maxWidth: "40ch", gap: "1rem" }} onSubmit={e => handleClick(e)}>
                     <Input
                         label='Start Year'
@@ -140,7 +130,19 @@ export default function Education() {
                     />
                     <button onClick={e => handleClick(e)} style={{ flexGrow: '1', borderRadius: "100vh" }}>ADD</button>
                 </form>
+                <div>
+                    <p className="description" style={{ maxWidth: "60ch", marginBlockEnd: "2rem" }}>{description}</p>
+                    <div className="flex card-container" style={{ gap: "0.5rem", maxWidth: "50rem" }}>
+                        {
+                            Educations
+                                .map((element, index) => (
+                                    <Card key={index} index={index} data={element} deleteCard={deleteCard} />
+                                ))
+                        }
+                    </div>
+                </div>
             </div>
+
         </div>
     )
 }

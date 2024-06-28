@@ -3,6 +3,8 @@
 import "@/styles/u_input.css"
 import { HTMLInputTypeAttribute } from "react";
 
+export const ssr = false;
+
 interface input {
     name: string,
     label: string,
@@ -33,6 +35,7 @@ export default function Input({ name, label, className, style, value, onChange, 
                             onChange={(e) => onChange(e)}
                             rows={rows ? rows : 8}
                             cols={cols}
+                            style={{ width: "90%" }}
                             required={required}></textarea>
                         :
                         <input

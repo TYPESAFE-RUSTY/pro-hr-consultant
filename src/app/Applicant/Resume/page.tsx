@@ -10,7 +10,7 @@ import {
     education, Educations,
     experience, Experiences,
     skills, Languages
-} from "@/utils/dataStructure";
+} from "@/utils/client/dataStructure";
 
 type stordTypes = generalInfo | summary | education[] | experience[] | string[]
 
@@ -66,6 +66,7 @@ export default function Page() {
             document.body.classList.add('light')
         }
         Resume?.classList.toggle('container')
+        Resume?.setAttribute("style", "background-color:white")
         header?.classList.toggle('print')
         footer?.classList.toggle('print')
         buttons.forEach(button => button.style.display = "none")

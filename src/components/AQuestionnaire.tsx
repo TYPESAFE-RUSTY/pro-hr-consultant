@@ -9,7 +9,7 @@ import Experience from "./a_questionnaire/Experience"
 export default function AQuestionnaire() {
     return (
         <section id="Questionnaire" className="container section-padding bgcolor">
-            <div className="glass">
+            <div style={{ border: "1px solid var(--border)", borderRadius: "5px" }}>
                 <AccordionWrapper heading="PROFESSIONAL SUMMARY" id="heading">
                     <Summary />
                 </AccordionWrapper>

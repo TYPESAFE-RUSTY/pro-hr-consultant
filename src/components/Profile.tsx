@@ -1,10 +1,10 @@
 "use client"
 import useLocalStorage from "@/hooks/useLocalStorage";
 import Input from "./Input"
-import { GeneralInformation, generalInfo } from "@/utils/dataStructure";
+import { GeneralInformation, generalInfo } from "@/utils/client/dataStructure";
 
 import "@/styles/a_profile.css"
-import { setPropByString } from "@/utils/utilityFunctions";
+import { setPropByString } from "@/utils/client/utilityFunctions";
 import Image from "next/image";
 
 
@@ -144,7 +144,7 @@ export default function Profile() {
 
     return (
         <section id="Profile" className="container section-padding" style={{ overflow: "clip" }}>
-            <div className="flex wrap align-center glass" style={{ justifyContent: "space-evenly", gap: "2rem" }}>
+            <div className="flex wrap align-center" style={{ justifyContent: "space-evenly", gap: "2rem" }}>
                 <Card name={data.name} position={data.position} experience={data.exp.totalExp} />
                 <Form data={data} changeHandler={changeHandler} />
             </div>

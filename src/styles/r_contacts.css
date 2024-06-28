@@ -17,6 +17,7 @@
 
 #Contacts .content>p.coloraccent {
     font-weight: 700;
+    -webkit-text-stroke: 1px black;
 }
 
 #Contacts .content>div {

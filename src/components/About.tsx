@@ -3,7 +3,7 @@ import HexagonDiagrma from "./HexagonDiagram"
 
 export default function About() {
     return (
-        <section id="About" className="container section-padding" style={{ overflow: "clip" }}>
+        <section id="About" className="container section-padding bgdiff" style={{ overflow: "clip" }}>
             <div className="flex align-center wrap" style={{ justifyContent: "center" }}>
                 <div className="flex place-center content" style={{ flexDirection: "column" }}>
                     <h2 className="fs-200">ABOUT US.</h2>

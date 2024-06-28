@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import useLocalStorage from '@/hooks/useLocalStorage';
 
-import { Summary as template, summary, social } from '@/utils/dataStructure';
+import { Summary as template, summary, social } from '@/utils/client/dataStructure';
 
 import Input from '../Input';
 
@@ -12,7 +12,7 @@ const Card = ({ data, index, deleteCard }: { data: social, index: number, delete
     return (
         <div className='summary-card'>
             <a href={data.url}>{data.name}</a>
-            <button onClick={() => deleteCard(index)}>X</button>
+            <button onClick={() => deleteCard(index)} tabIndex={-1}>X</button>
         </div>
     )
 }
@@ -61,7 +61,6 @@ export default function Summary() {
     return (
         <div style={{ padding: "1rem" }}>
             <div className="summary flex wrap align-center" style={{ justifyContent: "space-between", gap: "1rem", marginBlockEnd: "1rem" }}>
-                <p className="description" style={{ maxWidth: "60ch" }}>{description}</p>
                 <div className="summary">
                     <Input
                         label='Summary'
@@ -73,15 +72,9 @@ export default function Summary() {
                         cols={70}
                     />
                 </div>
+                <p className="description" style={{ maxWidth: "60ch" }}>{description}</p>
             </div>
-            <div className="flex wrap" style={{ gap: "0.5rem" }}>
-                {
-                    Summary.socials
-                        .map((element, index) => (
-                            <Card key={index} index={index} data={element} deleteCard={deleteCard} />
-                        ))}
-            </div>
-            <div className="socials flex wrap align-center" style={{ justifyContent: "space-between", gap: "1rem" }}>
+            <div className="socials">
                 <p style={{ maxWidth: "60ch" }}>
                     <b>ADD SOCIALS</b>
                     <span style={{ fontWeight: 'lighter', fontSize: 'xx-small' }}> (optional)</span>
@@ -103,8 +96,15 @@ export default function Summary() {
                         onChange={handleSocialChange}
                         required
                     />
-                    <button onClick={e => handleClick(e)}>+</button>
+                    <button onClick={e => handleClick(e)} tabIndex={-1}>+</button>
                 </form>
+            </div>
+            <div className="flex wrap" style={{ gap: "0.5rem" }}>
+                {
+                    Summary.socials
+                        .map((element, index) => (
+                            <Card key={index} index={index} data={element} deleteCard={deleteCard} />
+                        ))}
             </div>
         </div>
     )

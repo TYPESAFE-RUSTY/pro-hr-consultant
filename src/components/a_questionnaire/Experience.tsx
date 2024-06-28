@@ -1,8 +1,8 @@
 'use client';
-import { Experience as template, Experiences as templateArray, experience } from "@/utils/dataStructure";
+import { Experience as template, Experiences as templateArray, experience } from "@/utils/client/dataStructure";
 import Input from "../Input"
 import useLocalStorage from "@/hooks/useLocalStorage";
-import { setPropByString } from "@/utils/utilityFunctions";
+import { setPropByString } from "@/utils/client/utilityFunctions";
 import { useEffect, useState } from "react";
 
 const description = 'Highlight relevant work experiences by including key details like company name, job title, employment duration, and concise descriptions of responsibilities and achievements. Tailor the information to showcase how your past experiences align with the target job and emphasize quantifiable results and skills developed.'
@@ -10,22 +10,20 @@ const description = 'Highlight relevant work experiences by including key detail
 
 const Card = ({ data, index, deleteCard }: { data: experience, index: number, deleteCard: Function }) => {
     return (
-        <div className="obj-card flex glass" style={{ gap: '1rem' }}>
-            <div>
-                <b>
-                    Year :
-                </b> {data.year.start} - {data.year.end ? data.year.end : "Current"}<br />
-                <b>
-                    Company :
-                </b> {data.company}<br />
-                <b>
-                    Position :
-                </b> {data.position}<br />
-                <b>
-                    Description :
-                </b> {data.description.slice(0, 20)}{data.description.length > 20 && "..."}
-            </div>
-            <button onClick={() => deleteCard(index)}>X</button>
+        <div className="obj-card " style={{ gap: '1rem', minWidth: "17rem", position: "relative" }}>
+            <b>
+                Year :
+            </b> {data.year.start} - {data.year.end ? data.year.end : "Current"}<br />
+            <b>
+                Company :
+            </b> {data.company}<br />
+            <b>
+                Position :
+            </b> {data.position}<br />
+            <b>
+                Description :
+            </b> {data.description.slice(0, 20)}{data.description.length > 20 && "..."}
+            <button style={{ position: "absolute", right: "10px", top: "10px" }} onClick={() => deleteCard(index)} tabIndex={-1}>X</button>
         </div>
     )
 }
@@ -66,16 +64,7 @@ export default function Experience() {
 
     return (
         <div style={{ padding: "1rem" }}>
-            <div className="flex wrap" style={{ gap: "0.5rem" }}>
-                {
-                    Experiences
-                        .map((element, index) => (
-                            <Card key={index} index={index} data={element} deleteCard={deleteCard} />
-                        ))
-                }
-            </div>
             <div className="summary flex wrap align-center" style={{ justifyContent: "space-between", gap: "1rem", marginBlockEnd: "1rem" }}>
-                <p className="description" style={{ maxWidth: "60ch" }}>{description}</p>
                 <form className='flex wrap align-center' style={{ maxWidth: "40ch", gap: "1rem" }} onSubmit={e => handleClick(e)}>
                     <Input
                         label='Start Year'
@@ -120,7 +109,19 @@ export default function Experience() {
                     />
                     <button onClick={e => handleClick(e)} style={{ flexGrow: '1', borderRadius: "100vh" }}>ADD</button>
                 </form>
+                <div>
+                    <p className="description" style={{ maxWidth: "60ch", marginBlockEnd: "2rem" }}>{description}</p>
+                    <div className="flex" style={{ gap: "0.5rem", maxWidth: "50rem", overflowX: "scroll" }}>
+                        {
+                            Experiences
+                                .map((element, index) => (
+                                    <Card key={index} index={index} data={element} deleteCard={deleteCard} />
+                                ))
+                        }
+                    </div>
+                </div>
             </div>
+
         </div>
     )
 }

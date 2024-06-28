@@ -1,3 +1,8 @@
+#About {
+    /* remove this if you are using single page and that bgdiff */
+    padding-block: 5rem;
+}
+
 #About .content {
     max-width: 80ch;
 }

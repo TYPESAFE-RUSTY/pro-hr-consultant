@@ -1,0 +1,179 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                       String  @id @default(cuid())
+  userId                   String  @unique
+  type                     String
+  provider                 String
+  providerAccountId        String
+  refresh_token            String? @db.Text
+  access_token             String? @db.Text
+  expires_at               Int?
+  token_type               String?
+  scope                    String?
+  id_token                 String? @db.Text
+  session_state            String?
+  refresh_token_expires_in Int?
+  user                     User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+enum user_type {
+  APPLICANT
+  RECRUITER
+}
+
+model User {
+  // for auth
+  id            String    @id @default(cuid())
+  name          String?
+  username      String?   @unique
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  Account       Account?
+  type          user_type @default(APPLICANT)
+
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  ApplicantData ApplicantData?
+  RecruiterData RecruiterData?
+}
+
+enum Availablity {
+  FULL_TIME
+  PART_TIME
+}
+
+model ApplicantData {
+  id               String      @id @default(cuid())
+  address          String
+  phone            String      @unique
+  position         String
+  location         String
+  availablity      Availablity
+  annual_salary    String
+  total_experience Int
+
+  summary     Summary?
+  educations  Education[]
+  experiences Experience[]
+  languages   Language[]
+  // todo!();
+  // language and programming language different
+  // skills from a closed set 
+  skills      Skill[]
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      String       @unique
+}
+
+model Summary {
+  id              String         @id @default(cuid())
+  description     String
+  socials         Social[]
+  applicant       ApplicantData? @relation(fields: [applicantDataId], references: [id], onDelete: Cascade)
+  applicantDataId String?        @unique
+}
+
+model Social {
+  id        String  @id @default(cuid())
+  name      String
+  url       String
+  Summary   Summary @relation(fields: [SummaryId], references: [id], onDelete: Cascade)
+  SummaryId String
+}
+
+model Education {
+  id              String         @id @default(cuid())
+  start_year      DateTime
+  end_year        DateTime
+  degree          String
+  location        String
+  description     String
+  university      String
+  applicant       ApplicantData? @relation(fields: [applicantDataId], references: [id], onDelete: Cascade)
+  applicantDataId String?
+}
+
+model Experience {
+  id              String         @id @default(cuid())
+  start_year      DateTime
+  end_year        DateTime
+  position        String
+  description     String
+  company         String
+  ApplicantData   ApplicantData? @relation(fields: [applicantDataId], references: [id], onDelete: Cascade)
+  applicantDataId String?
+}
+
+model Language {
+  id              String         @id @default(cuid())
+  name            String
+  ApplicantData   ApplicantData? @relation(fields: [applicantDataId], references: [id], onDelete: Cascade)
+  applicantDataId String?
+}
+
+model Skill {
+  id              String         @id @default(cuid())
+  name            String
+  ApplicantData   ApplicantData? @relation(fields: [applicantDataId], references: [id], onDelete: Cascade)
+  applicantDataId String?
+}
+
+model RecruiterData {
+  id                String @id @default(cuid())
+  User              User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId            String @unique
+  phone             String @unique
+  job_title         String
+  linked_in_profile String
+
+  company Company?
+
+  years_of_experience             Int?
+  positions_looking               String?
+  recruitment_methods             String?
+  monthly_recruitment             Int?
+  specialization                  String?
+  hiring_manager_coordination     String?
+  candidate_communication_methods String?
+  recruitment_challenges          String?
+  overcoming_stratigies           String?
+  comment                         String?
+}
+
+model Company {
+  id              String        @id @default(cuid())
+  RecruiterData   RecruiterData @relation(fields: [recruiterDataId], references: [id], onDelete: Cascade)
+  recruiterDataId String        @unique
+
+  name     String
+  size     Int?
+  industry String?
+  location String?
+
+  sourcing_method               String?
+  candidate_evaluation_criteria String?
+  interview_methods             String?
+  background_checks             String?
+  skills_assessment_methods     String?
+
+  recruitment_software_and_tools String?
+  ats_familiarity                String?
+
+  recruitment_success_measurement String?
+  kpi_tracked                     String?
+}
